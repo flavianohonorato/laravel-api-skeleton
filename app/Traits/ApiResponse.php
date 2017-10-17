@@ -1,6 +1,6 @@
 <?php
 
-namespace iChance\Traits;
+namespace App\Traits;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
