@@ -30,9 +30,11 @@ $ php artisan serve
 - JWT Auth [https://github.com/tymondesigns/jwt-auth/]
 
 ### TODO
+ 
 - [x] JWT
-- [] Socialite
-- [] Documentation API
-- [] CORS Enable
-- [] Modularization
-- [] HATEOAS
+- [ ] Socialite
+- [ ] Documentation API
+- [ ] CORS Enable
+- [ ] Modularization
+- [ ] HATEOAS
+- [ ] PHPUnit Tests
