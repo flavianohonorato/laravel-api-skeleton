@@ -32,6 +32,8 @@ $ php artisan serve
 ### TODO
  
 - [x] JWT
+- [x] Custom Exception Handlers
+- [x] Generic ApiController
 - [ ] Socialite
 - [ ] Documentation API
 - [ ] CORS Enable
