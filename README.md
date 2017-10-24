@@ -29,3 +29,10 @@ $ php artisan serve
 - Laravel Framework 5.5.*[https://laravel.com/docs/5.5/]
 - JWT Auth [https://github.com/tymondesigns/jwt-auth/]
 
+### TODO
+- [x] JWT
+- [] Socialite
+- [] Documentation API
+- [] CORS Enable
+- [] Modularization
+- [] HATEOAS
