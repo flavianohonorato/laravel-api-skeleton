@@ -4,7 +4,7 @@ A Laravel skeleton for work with APIs REST
 
 ### Requeriments
 
-- PHP >= 7.0.0
+- PHP >= 7.1.3
 - mbstring PHP Extension
 - PDO Extension
 
@@ -26,7 +26,7 @@ $ php artisan serve
 
 ### Used Packages
 
-- Laravel Framework 5.5.*[https://laravel.com/docs/5.5/]
+- Laravel Framework 5.8.*[https://laravel.com/docs/5.8/]
 - JWT Auth [https://github.com/tymondesigns/jwt-auth/]
 
 ### TODO
