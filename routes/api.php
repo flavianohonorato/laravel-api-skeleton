@@ -1,18 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
 Route::post('recover', 'AuthController@recover');
+Route::get('refresh', 'AuthController@refresh');
 
 Route::group(['middleware' => ['jwt.auth']], function() {
+    Route::get('user', 'AuthController@user');
     Route::get('logout', 'AuthController@logout');
-    Route::get('test', function(){
-        return response()->json(['foo'=>'bar']);
-    });
 });

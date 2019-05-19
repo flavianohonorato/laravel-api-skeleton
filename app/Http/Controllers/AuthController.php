@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -112,25 +113,26 @@ class AuthController extends Controller
                 return $this->errorResponse("Credenciais inválidas. Certifique-se de inserir as informações certas e verificou seu endereço de e-mail", 401);
             }
         } catch (JWTException $e) {
-            return $this->errorResponse("Não foi possível criar token", 500)
+            return $this->errorResponse("Não foi possível criar token", 500);
         }
         return $this->getOne(['token' => $token]);
     }
 
     /**
      * Invalidate the token, so user cannot use it anymore
-     * They have to relogin to get a new token
-     * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function logout(Request $request) {
-        $this->validate($request, ['token' => 'required']);
-        try {
-            JWTAuth::invalidate($request->input('token'));
-            return $this->showMessage("Logou efetudo com sucesso");
-        } catch (JWTException $e) {
-            return $this->errorResponse("Falha ao sair", 500);
-        }
+    public function logout() {
+        $this->guard()->logout();
+        return $this->showMessage("Logout");
+    }
+
+    /**
+     * Return auth guard
+     */
+    private function guard()
+    {
+        return Auth::guard();
     }
 
     /**
@@ -153,4 +155,17 @@ class AuthController extends Controller
         }
         return $this->showMessage("Um e-mail de recuperação de senha foi enviado! Por favor verifique seu email");
     }
+
+    /**
+     * Get authenticated user
+     */
+    public function user()
+    {
+        $user = User::find(auth()->id());
+        return response()->json([
+            'status' => 'success',
+            'data'   => $user
+        ]);
+    }
+
 }
