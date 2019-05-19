@@ -34,9 +34,8 @@ $ php artisan serve
 - [x] JWT
 - [x] Custom Exception Handlers
 - [x] Generic ApiController
-- [ ] Socialite
+- [x] CORS Enable
 - [ ] Documentation API
-- [ ] CORS Enable
 - [ ] Modularization
 - [ ] HATEOAS
 - [ ] PHPUnit Tests
