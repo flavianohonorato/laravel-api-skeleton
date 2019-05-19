@@ -31,11 +31,8 @@ $ php artisan serve
 
 ### TODO
  
-- [x] JWT
-- [x] Custom Exception Handlers
-- [x] Generic ApiController
+- [x] JWT Auth
 - [x] CORS Enable
 - [ ] Documentation API
 - [ ] Modularization
-- [ ] HATEOAS
 - [ ] PHPUnit Tests
